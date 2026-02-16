@@ -1,13 +1,10 @@
-
 import streamlit as st
 import pandas as pd
 import joblib
 
 # Load model
 model = joblib.load("loan_prediction_model (1).pkl")
-encoder= joblib.load("label_encoder (2).pkl")
 
-# Streamlit App
 st.title("Loan Prediction App")
 
 # User Inputs
@@ -45,3 +42,4 @@ if st.button("Predict"):
         st.success("Loan Approved")
     else:
         st.error("Loan Not Approved")
+
