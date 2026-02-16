@@ -6,6 +6,7 @@ import joblib
 
 # Load model
 model = joblib.load("loan_prediction_model.pkl")
+encoder = joblib.load("label_encoder (1).pkl")
 
 st.title("Loan Prediction App")
 
