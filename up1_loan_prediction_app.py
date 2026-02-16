@@ -14,7 +14,7 @@ st.title("Loan Prediction App")
 # -----------------------------------
 @st.cache_resource
 def load_model():
-    with open("loan_prediction_model.pkl", "rb") as file:
+    with open("loan_prediction_model (1).pkl", "rb") as file:
         model = pickle.load(file)
     return model
 
