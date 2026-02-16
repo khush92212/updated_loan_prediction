@@ -40,8 +40,8 @@ df = pd.DataFrame({
 
 if st.button("Predict"):
     for col in encoders.keys():
-    if col in df.columns:
-        df[col] = encoders[col].transform(df[col])
+        if col in df.columns:
+            df[col] = encoders[col].transform(df[col])
         
     st.write(type(encoders))
 
