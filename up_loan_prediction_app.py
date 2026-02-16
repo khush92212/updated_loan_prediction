@@ -13,7 +13,7 @@ import joblib
 
 # Load model
 model = joblib.load("loan_prediction_model.pkl")
-label_encoder= joblib.load("label_encoder (1).pkl")
+encoder= joblib.load("label_encoder (1).pkl")
 
 st.title("Loan Prediction App")
 
@@ -46,9 +46,12 @@ df = pd.DataFrame({
 })
 
 if st.button("Predict"):
-    prediction = model.predict(df)
+    for col in encoder:
+        df[col]= encoder[col].transform(df[col])
 
-    if prediction[0] == 1:
-        st.success("Loan Approved")
-    else:
-        st.error("Loan Not Approved")
+    df= df[model.feature_names_in_]
+    
+    prediction = model.predict(df)
+    st.success(f"Loan Prediction: {prediction[0]:,.2f}")
+
+   
