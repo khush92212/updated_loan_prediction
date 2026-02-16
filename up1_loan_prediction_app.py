@@ -5,7 +5,7 @@ import pickle
 # ---------------------------
 # Load Trained Model
 # ---------------------------
-model = pickle.load(open("loan_prediction_model.pkl", "rb"))
+model = pickle.load(open("loan_prediction_model (1).pkl", ))
 
 st.title("Loan Prediction App")
 
